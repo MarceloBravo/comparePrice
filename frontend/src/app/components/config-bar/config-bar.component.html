@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="row">
+    <form [formGroup]="form" class="config-container row">
+      <div class="form-group col-md-4">
+        <input
+          class="form-control mr-sm-4"
+          type="search"
+          placeholder="Buscar producto"
+          aria-label="Buscar"
+          formControlName="textoBusqueda"
+          (change)="busquedaChange()"
+        >
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="" class="col-md-4 label-control">Ubicación</label>
+        <div class="col-md-8">
+            <input type="text" class="form-control" formControlName="location" placeholder="Ciudad, región o país" (change)="locationChange()">
+        </div>
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="cbo-items" class="col-md-5 label-control">Registros por página</label>
+        <div class="col-md-3">
+            <select id="cbo-items" class="form-control" formControlName="num" placeholder="Ciudad, región o país" (change)="cboItemsChange()">
+                <option value="10">10</option>
+                <option value="10">15</option>
+                <option value="10">20</option>
+                <option value="10">25</option>
+                <option value="10">30</option>
+            </select>
+        </div>
+        <div class="col-md-1"></div>
+        <button class="btn my-3 my-sm-0" type="button" (click)="busquedaClick()">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAVFJREFUSEvVleExBEEQRt9FQAoiQATIgAgQASJABIgAESACZEAEyIAIqKd6qub2Zmen7N4P/eu2dqdf99dfz81YcsyWnJ8+wCpwBOwCG1HEC3APXAGfrYWVAAfABSCkFCY/AW5aIF2Aya/j4ANwCTzF8zZwBmzF8150VOXkACt+i8oPKxUKOQ2Z1obkygHpoJWrfS3syk7Oo6veb3OAQ1wHdjJZ+g4q1yPgmc1aJTngOz5stW7T92MBXxW3/db7V4mc0R3wDChX0wzSkF0mLdgyZPdBKzcBtOk7sBLO0CGlSIV8xJZXt7o70NS6ibWiyZTBUAr9nyQZtGh3Bqlat9m27aQUDtb3wrSpv2/7NKpddsexcO6G8RpXgwmVJe2N77yX3P6FaPV86Wx+b/VCxgBS0v2MvtDJWMAgZApAFzJ3E08FSBCtPfdHNCWg6NT/D/gBeOVFGZeTouUAAAAASUVORK5CYII="/>
+        </button>
+      </div>
+
+    </form>
+
+  </div>
+</nav>

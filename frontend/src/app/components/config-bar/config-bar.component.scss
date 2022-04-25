@@ -1,0 +1,15 @@
+.navbar{
+  .row{
+    width: 100%;
+  }
+}
+
+.config-container, 
+.form-group{
+  display: flex;
+  flex-wrap: nowrap;
+
+  .btn:hover{
+    background: #dfe0e1;
+  }
+}
