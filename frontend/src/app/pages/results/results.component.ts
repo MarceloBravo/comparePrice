@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { CotizarService } from '../../services/cotizar/cotizar.service';
+import { CotizarService } from 'src/app/services/cotizar/cotizar.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-results',
+  templateUrl: './results.component.html',
+  styleUrls: ['./results.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class ResultsComponent implements OnInit {
 
   constructor(){}
 
   ngOnInit(): void {}
+
 
   /*
   organicResults: any[] = []
@@ -35,7 +36,17 @@ export class HomeComponent implements OnInit {
       this.getLocalResults(res.result)
       this.getShoppingResults(res.result)
       this.getPagination(res.result)
-      console.log('organicResults = ',this.organicResults)
+      console.log(
+        'organicResults', this.organicResults,
+        'inlineProducts',this.inlineProducts,
+        'inlineShopping', this.inlineShopping,
+        'localAds', this.localAds,
+        'localResults',this.localResults,
+        'inlineShoppingResults', this.inlineShoppingResults,
+        'shoppingResults',this.shoppingResults,
+        'pagination', this.pagination,
+        'mapa',this.mapa
+      )
     })
   }
 
