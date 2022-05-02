@@ -1,4 +1,13 @@
 <div class="content-details-results">
+  <app-grid
+    [datos]="datos"
+    [campos]="['thumbnail','title','price','source','link']"
+    [cabeceras]="['Imagen','Nombre','Precio','Vendido por','Página web']"
+    [tipoColumna]="['image','string','currency','string','link']"
+  >
+  </app-grid>
+
+  <!--
   <table class="table table-sm">
     <thead>
       <tr>
@@ -22,4 +31,5 @@
       </tr>
     </tbody>
   </table>
+  -->
 </div>

@@ -1,0 +1,41 @@
+<div class="content-details-results">
+  <table class="table table-sm">
+    <thead>
+      <tr>
+        <th 
+          *ngFor="let hdText of cabeceras; index as i" scope="col" 
+          [class]="classColumn[i] ? classColumn[i] : '' ">
+            {{ cabeceras[i] }}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let fila of datos; index as i">
+        <ng-container *ngFor="let columna of campos; index as c">
+
+          <td *ngIf="tipoColumna[c] === 'image' || tipoColumna[c] === 'imagen' || tipoColumna[c] === 'foto'">
+            <img *ngIf="fila[columna]" [src]="fila[columna]" [alt]="fila[columna]">
+            <label *ngIf="!fila[columna]">{{ columna }} Sin foto</label>
+          </td>
+
+          <td *ngIf="tipoColumna[c] === 'link'" scope="row">
+            <a [href]="fila[columna]" target="aboutBlank">Sitio Web</a>
+          </td>
+
+          <td *ngIf="tipoColumna[c] === 'number' || tipoColumna[c] === 'numero'" scope="row" >
+            {{ formatearNumero(fila[columna]) }}
+          </td>
+
+          <td *ngIf="tipoColumna[c] === 'currency' || tipoColumna[c] === 'moneda'" scope="row" >
+            {{ formatearMoneda(fila[columna]) }}
+          </td>
+
+          <td *ngIf="tipoColumna[c] === 'string' || tipoColumna[c] === 'texto' || tipoColumna[c] === undefined">
+            {{ fila[columna] }}
+          </td>
+       
+        </ng-container>
+      </tr>
+    </tbody>
+  </table>
+</div>
