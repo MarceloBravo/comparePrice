@@ -10,7 +10,7 @@ export class GridComponent implements OnInit {
   @Input() datos: any[] = []
   @Input() campos: any[] = []
   @Input() cabeceras: string[] = []
-  @Input() tipoColumna: string[] = []  //['string','number','image','link','currency']
+  @Input() tipoColumna: string[] = []  //['string','number','image','link','currency',,'percent']
   @Input() classColumn: string[] = []
   @Input() formatoMoneda: string = '$'
 

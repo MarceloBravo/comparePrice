@@ -26,6 +26,10 @@
             {{ formatearNumero(fila[columna]) }}
           </td>
 
+          <td *ngIf="tipoColumna[c] === 'percent' || tipoColumna[c] === 'porcentaje'">
+            {{ fila[columna] }} %
+          </td>
+
           <td *ngIf="tipoColumna[c] === 'currency' || tipoColumna[c] === 'moneda'" scope="row" >
             {{ formatearMoneda(fila[columna]) }}
           </td>
