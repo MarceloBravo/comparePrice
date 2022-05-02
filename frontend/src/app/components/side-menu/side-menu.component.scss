@@ -1,3 +1,27 @@
+:host{
+  border-right: solid #b1b2b3  thin;
+  background: #f8f9fa;
+  height: 460px;
+
+  div{
+    ul{
+      li{
+        a{
+          color: black;
+        }
+      }
+
+      .active{
+        a{
+          color: #2e61ef;
+          text-decoration-line: underline;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
 .flex-column{
   width: 200px;
 }

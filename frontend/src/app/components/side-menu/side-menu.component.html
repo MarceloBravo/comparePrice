@@ -1,12 +1,12 @@
 <div>
-  <ul class="nav flex-column">
-    <li class="nav-item" *ngIf="_cotizarService.data.organicResults.length > 0">
-      <a class="nav-link active" routerLink="/results/organic-results">Resultados orgánicos</a>
+  <ul id="side-menu" class="nav flex-column">
+    <li #resultadosOrganicos class="nav-item" *ngIf="_cotizarService.data.organicResults.length > 0" (click)="changeActive(resultadosOrganicos)">
+      <a class="nav-link" routerLink="/results/organic-results">Resultados orgánicos</a>
     </li>
-    <li class="nav-item" *ngIf="_cotizarService.data.inlineProducts.length > 0">
+    <li #productosEnLinea class="nav-item" *ngIf="_cotizarService.data.inlineProducts.length > 0" (click)="changeActive(productosEnLinea)">
       <a class="nav-link" routerLink="/results/inline-products">Productos en línea</a>
     </li>
-    <li class="nav-item" *ngIf="_cotizarService.data.inlineShopping.length > 0">
+    <li #comprasEnLinea class="nav-item" *ngIf="_cotizarService.data.inlineShopping.length > 0" (click)="changeActive(comprasEnLinea)">
       <a class="nav-link" routerLink="/results/inline-shopping">Compras en línea</a>
     </li>
     <!--
@@ -14,10 +14,10 @@
       <a class="nav-link" href="#">Productos locales</a>
     </li>
     -->
-    <li class="nav-item" *ngIf="mostrarUrl(_cotizarService.data.localResults)">
-      <a class="nav-link" routerLink="/results/map">Donde comprar</a>
+    <li #mapa class="nav-item" *ngIf="mostrarUrl(_cotizarService.data.localResults)" (click)="changeActive(mapa)">
+      <a class="nav-link" routerLink="/results/map">Donde comprar?</a>
     </li>
-    <li class="nav-item" *ngIf="mostrarUrl(_cotizarService.data.shoppingResults)">
+    <li #compras class="nav-item" *ngIf="mostrarUrl(_cotizarService.data.shoppingResults)" (click)="changeActive(compras)">
       <a class="nav-link" routerLink="/results/shopping">Compras</a>
     </li>
     <!--

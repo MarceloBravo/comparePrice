@@ -4,7 +4,7 @@
   }
 }
 
-.config-container, 
+.config-container,
 .form-group{
   display: flex;
   flex-wrap: nowrap;
@@ -12,4 +12,8 @@
   .btn:hover{
     background: #dfe0e1;
   }
+}
+
+.shadow {
+  box-shadow: 0 .9rem 1rem rgba(0,0,0,.15)!important;
 }

@@ -15,6 +15,7 @@ import { InlineShoppingComponent } from './pages/inline-shopping/inline-shopping
 import { ComprasComponent } from './pages/compras/compras.component';
 import { LocalResultsComponent } from './pages/local-results/local-results.component';
 import { MapComponentComponent } from './components/map-component/map-component.component';
+import { AcercaDeComponent } from './pages/acerca-de/acerca-de.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { MapComponentComponent } from './components/map-component/map-component.
     ComprasComponent,
     LocalResultsComponent,
     MapComponentComponent,
+    AcercaDeComponent,
   ],
   imports: [
     BrowserModule,

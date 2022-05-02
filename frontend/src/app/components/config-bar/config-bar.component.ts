@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { CotizarService } from '../../services/cotizar/cotizar.service';
 import { ConfigSearch } from '../../class/configSearch/config-search';
 import { Router } from '@angular/router';
+import { SearchBarService } from '../../services/search-bar/search-bar.service';
 @Component({
   selector: 'app-config-bar',
   templateUrl: './config-bar.component.html',
@@ -15,15 +16,33 @@ export class ConfigBarComponent implements OnInit {
     location: new FormControl(''),
     num: new FormControl('30')
   })
+  showShadow: boolean = false
+  showBar: Boolean = true
 
   constructor(
     private _cotizarService: CotizarService,
+    private _searchBar: SearchBarService,
     private router: Router
   ) {}
 
   ngOnInit(): void {
+    this._searchBar.showSearchBar$.subscribe((res: Boolean) =>{
+      this.showBar = res
+      this.form.reset({textoBusqueda: '', location: '', num: 30})
+    })
+
+    if(this._cotizarService.dataChanged$)this.router.navigate(['/'])
+
     this._cotizarService.dataChanged$.subscribe((res: Boolean) => {
       this.router.navigate([res ? this.navigate() : '/'])
+    })
+
+    this.scrollPosition()
+  }
+
+  private scrollPosition(){
+    window.addEventListener('scroll', (event)=> {
+      this.showShadow = scrollY > 0
     })
   }
 

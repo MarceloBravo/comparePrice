@@ -7,10 +7,11 @@ import { InlineProductsComponent } from './pages/inline-products/inline-products
 import { InlineShoppingComponent } from './pages/inline-shopping/inline-shopping.component';
 import { ComprasComponent } from './pages/compras/compras.component';
 import { LocalResultsComponent } from './pages/local-results/local-results.component';
+import { AcercaDeComponent } from './pages/acerca-de/acerca-de.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'home', component: HomeComponent },
+  { path: 'about', component: AcercaDeComponent },
   { path: 'results', component: ResultsComponent,
     children: [
       { path: 'organic-results', component: OrganicResultsComponent },

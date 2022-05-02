@@ -1,5 +1,14 @@
+.navbar-brand{
+  font-weight: bold;
+  font-size: xx-large;
+  font-family: unset;
+  color: #12adb5;
+  margin: 0px 10px 0px 20px;
+}
+
 .collapse.navbar-collapse{
   justify-content: space-between;
+
   .search-form{
     display: flex;
 

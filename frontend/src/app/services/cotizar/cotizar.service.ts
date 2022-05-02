@@ -2,9 +2,7 @@ import { Injectable, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ConfigSearch } from '../../class/configSearch/config-search';
 import { ConstantesService } from '../constantes/constantes.service'
-import { Data } from 'src/app/class/data/data';
-import { Router } from '@angular/router';
-
+import { Data } from 'src/app/class/data/data'
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +27,7 @@ export class CotizarService {
             this.getShoppingResults(res.result)
             this.getPagination(res.result)
             this.dataChanged$.emit(true)
-            console.log('trayendo datos', this.data)
+            //console.log('trayendo datos', JSON.stringify(this.data))
           }, error => {
             console.log('ERROR', error)
             //this.resultadoBusquedaChange$.emit({error: error, mensaje: error.message})

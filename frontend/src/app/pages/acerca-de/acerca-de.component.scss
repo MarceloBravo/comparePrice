@@ -1,0 +1,28 @@
+:host{
+  height: 80%;
+  position: absolute;
+  width: 100%;
+  padding-top: 112px;
+}
+
+h2{
+  text-align: center;
+}
+
+.row{
+  div{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+
+    img{
+      height: 150px;
+    }
+  }
+}
+
+p{
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+}

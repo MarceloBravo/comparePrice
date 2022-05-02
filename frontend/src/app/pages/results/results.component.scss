@@ -1,7 +1,16 @@
 :host{
-  height: 80%;
+  height: 76%;
   position: absolute;
   width: 100%;
+  padding-top: 112px;
+
+  div{
+    h3{
+      margin-bottom: 0px;
+      background: #f8f9fa;
+      text-align: center;
+    }
+  }
 }
 
 .result-content{

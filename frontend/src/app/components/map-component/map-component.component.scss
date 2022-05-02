@@ -9,3 +9,10 @@
   height: 400px;
   width: 100%;
 }
+
+/* camiando el estilo a los controles del zoom de Mapa */
+::ng-deep .ol-control button {
+  background-color: rgb(80, 141, 211);
+  color: white;
+  border: solid thin rgb(88, 88, 173);
+}

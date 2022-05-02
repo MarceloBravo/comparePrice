@@ -12,13 +12,13 @@
     </thead>
     <tbody>
       <tr *ngFor="let item of this.datos; index as i">
-        <th scope="row">{{ i + 1 }}</th>
+        <td scope="row">{{ i + 1 }}</td>
         <td *ngIf="item.thumbnail"><img [src]="item.thumbnail" [alt]="item.thumbnail"></td>
         <td *ngIf="!item.thumbnail">Sin foto</td>
         <td>{{ item.title }}</td>
         <td class="td-precio">{{ item.price }}</td>
         <td>{{ item.source }}</td>
-        <td> <a [href]="item.link">Ir a la página web de la tienda</a></td>
+        <td> <a [href]="item.link" target="aboutBlank">Ir a la página web de la tienda</a></td>
       </tr>
     </tbody>
   </table>
