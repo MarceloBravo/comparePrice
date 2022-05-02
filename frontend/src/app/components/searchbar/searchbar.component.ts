@@ -1,15 +1,16 @@
-import { Component, OnInit, NgModule } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { CotizarService } from '../../services/cotizar/cotizar.service';
 import { ConfigSearch } from '../../class/configSearch/config-search';
 import { Router } from '@angular/router';
 import { SearchBarService } from '../../services/search-bar/search-bar.service';
+
 @Component({
-  selector: 'app-config-bar',
-  templateUrl: './config-bar.component.html',
-  styleUrls: ['./config-bar.component.scss']
+  selector: 'app-searchbar',
+  templateUrl: './searchbar.component.html',
+  styleUrls: ['./searchbar.component.scss']
 })
-export class ConfigBarComponent implements OnInit {
+export class SearchbarComponent implements OnInit {
   opts: ConfigSearch = new ConfigSearch()
   form: FormGroup = new FormGroup({
     textoBusqueda: new FormControl(''),
@@ -84,5 +85,4 @@ export class ConfigBarComponent implements OnInit {
     ){
       this._cotizarService.getBuscar(this.opts)
     }
-  }
-}
+  }}

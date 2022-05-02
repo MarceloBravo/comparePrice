@@ -21,6 +21,7 @@ export class InlineProductsComponent implements OnInit {
   ngOnInit(): void {
     if(this._cotizarService.data.inlineProducts.length > 0){
       this.datos = this._cotizarService.data.inlineProducts
+      this.datos.forEach(e => e.dcto = this.calcularDescuento(e.price, e.original_price) )
       console.log('RESULTADOS EN LINEA',this._cotizarService.data)
     }else{
       this.router.navigate(['/'])

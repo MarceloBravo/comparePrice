@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ConfigBarComponent } from './components/config-bar/config-bar.component';
 import { ResultsComponent } from './pages/results/results.component';
 import { SideMenuComponent } from './components/side-menu/side-menu.component';
 import { OrganicResultsComponent } from './pages/organic-results/organic-results.component';
@@ -16,13 +15,14 @@ import { ComprasComponent } from './pages/compras/compras.component';
 import { LocalResultsComponent } from './pages/local-results/local-results.component';
 import { MapComponentComponent } from './components/map-component/map-component.component';
 import { AcercaDeComponent } from './pages/acerca-de/acerca-de.component';
+import { GridComponent } from './components/grid/grid.component';
+import { SearchbarComponent } from './components/searchbar/searchbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavbarComponent,
-    ConfigBarComponent,
     ResultsComponent,
     SideMenuComponent,
     OrganicResultsComponent,
@@ -32,6 +32,8 @@ import { AcercaDeComponent } from './pages/acerca-de/acerca-de.component';
     LocalResultsComponent,
     MapComponentComponent,
     AcercaDeComponent,
+    GridComponent,
+    SearchbarComponent,
   ],
   imports: [
     BrowserModule,
