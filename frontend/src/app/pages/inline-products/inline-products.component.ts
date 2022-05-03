@@ -22,7 +22,7 @@ export class InlineProductsComponent implements OnInit {
     if(this._cotizarService.data.inlineProducts.length > 0){
       this.datos = this._cotizarService.data.inlineProducts
       this.datos.forEach(e => e.dcto = this.calcularDescuento(e.price, e.original_price) )
-      console.log('RESULTADOS EN LINEA',this._cotizarService.data)
+      //console.log('RESULTADOS EN LINEA',this._cotizarService.data)
     }else{
       this.router.navigate(['/'])
     }

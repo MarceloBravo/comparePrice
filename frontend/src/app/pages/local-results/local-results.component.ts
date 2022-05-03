@@ -7,7 +7,7 @@ import { CotizarService } from '../../services/cotizar/cotizar.service';
   styleUrls: ['./local-results.component.scss']
 })
 export class LocalResultsComponent implements OnInit {
-  marcadores: {lat: number, lon: number, text?: string}[] = []
+  marcadores: {lat: number, lon: number, text?: string, info?: Object}[] = []
   lat: number = 0
   lon: number = 0
 
@@ -15,13 +15,15 @@ export class LocalResultsComponent implements OnInit {
 
   ngOnInit(): void {
     this._cotizarService.data.localResults.forEach(element => {
+      console.log('element',element)
       if(this.lat === 0)this.lat = element.gps_coordinates.latitude
       if(this.lon === 0)this.lon = element.gps_coordinates.longitude
       this.marcadores.push(
         {
           lat: element.gps_coordinates.latitude,
           lon: element.gps_coordinates.longitude,
-          text: element.title
+          text: element.title,
+          info: element
         })
     });
     console.log(this.marcadores, this.lat, this.lon);

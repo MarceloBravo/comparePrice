@@ -25,8 +25,14 @@ import Point from 'ol/geom/Point';
 export class MapComponentComponent implements AfterViewInit  {
   @Input() lat: number = -35.418314545193276
   @Input() lon: number = -71.6407479221932
-  @Input() marcadores: {lat: number, lon: number, text?: string}[] = []
+  @Input() marcadores: {lat: number, lon: number, text?: string, info?: Object}[] = []
   @Input() zoom: number = 17
+  nombre: string = ''
+  tipo: string = ''
+  direccion: string = ''
+  descripcion: string = ''
+  horario: string = ''
+  telefono: string = ''
 
   map: any
 
@@ -62,15 +68,42 @@ export class MapComponentComponent implements AfterViewInit  {
       })
 
       this.map.addLayer(vectorLayer)
+
+      this.showDatatEvent()
+
+    })
+  }
+
+  private showDatatEvent(){
+    this.map.on('pointermove', (e: any) => {
+
+      this.nombre = ''; this.tipo = ''
+      this.direccion = ''; this.descripcion = ''
+      this.horario = ''; this.telefono = ''
+
+      this.map.forEachFeatureAtPixel(e.pixel, (feature: any, layer: any) => {
+        //if(feature.get('link'))window.open(feature.get('link'), 'blank')
+        this.nombre = feature.get('info')['title'] ? feature.get('info')['title'] : ''
+        this.tipo = feature.get('info')['type'] ? feature.get('info')['type'] : ''
+        this.direccion = feature.get('info')['years_in_business'] ? feature.get('info')['years_in_business'] : ''
+        this.descripcion = feature.get('info')['description'] ? feature.get('info')['description'] : ''
+        this.horario = feature.get('info')['hours'] ? feature.get('info')['hours'] : ''
+        this.telefono = feature.get('info')['phone'] ? feature.get('info')['phone'] : ''
+
+        //let selectedName = feature.get('name')
+        //let AddInfo = feature.get('info')
+        //console.log('click info = ',selectedName, AddInfo)
+      })
     })
   }
 
 
-  private crearMarcador(coordenadas: {lat: number, lon: number, text?: string}){
+  private crearMarcador(coordenadas: {lat: number, lon: number, text?: string, info?: string}){
     let mark = new Feature({
       geometry: new Point(fromLonLat([coordenadas.lon,coordenadas.lat])),
       labelPoint: new Point(fromLonLat([coordenadas.lon,coordenadas.lat])),
-      name: 'Marcador UNO',
+      name: coordenadas.text,
+      info: coordenadas.info
     });
 
     mark.setStyle(new Style({
@@ -97,7 +130,7 @@ export class MapComponentComponent implements AfterViewInit  {
           backgroundFill: new Fill({
             color: '#a30303',
           }),
-          offsetY: -25
+          offsetY: -25,
         }
       )
     }))
