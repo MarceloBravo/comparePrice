@@ -6,28 +6,4 @@
     [tipoColumna]="['image','string','currency','link']"
   >
   </app-grid>
-
-  <!--
-  <table class="table table-sm">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Imagen</th>
-        <th scope="col">Nombre</th>
-        <th scope="col col-precio">Precio</th>
-        <th scope="col">Página web</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of this.datos; index as i">
-        <td scope="row">{{ i + 1 }}</td>
-        <td *ngIf="item.imagen"><img [src]="item.imagen" [alt]="item.imagen"></td>
-        <td *ngIf="!item.imagen">Sin foto</td>
-        <td>{{ item.nombre }}</td>
-        <td class="td-precio">{{ formatearPrecio(item.precio) }}</td>
-        <td> <a [href]="item.link" target="aboutBlank">Ir a la página web de la tienda</a></td>
-      </tr>
-    </tbody>
-  </table>
-  -->
 </div>

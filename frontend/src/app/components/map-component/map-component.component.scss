@@ -4,6 +4,23 @@
   height: 100%;
 }
 
+.shop-info{
+  position: absolute;
+  left: 13px;
+  right: 10px;
+  height: 65px;
+  bottom: 0px;
+  background: #031830;
+
+  span{
+    color: #f8f9fa;
+
+    b{
+      color: #3c62cf;
+    }
+  }
+}
+
 #hotel_map {
   position: absolute;
   height: 400px;
@@ -11,8 +28,16 @@
 }
 
 /* camiando el estilo a los controles del zoom de Mapa */
-::ng-deep .ol-control button {
-  background-color: rgb(80, 141, 211);
-  color: white;
-  border: solid thin rgb(88, 88, 173);
+::ng-deep .ol-control{
+  display: flex;
+  width: 30px;
+  flex-wrap: wrap;
+
+  button {
+    background-color: #277bd9;
+    color: white;
+    border: solid thin #2665d7;
+    width: 24.31px;
+    font-weight: bold;
+  }
 }

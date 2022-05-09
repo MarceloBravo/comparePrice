@@ -1,3 +1,11 @@
 <div class="row map_container">
   <div id="hotel_map"></div>
 </div>
+<div class="shop-info">
+  <span *ngIf="nombre"> <b>Nombre:</b> {{nombre}} </span>
+  <span *ngIf="tipo"> <b>Tipo:</b> {{tipo}} </span>
+  <span *ngIf="descripcion"> <b>Descripción:</b> {{descripcion}} </span>
+  <span *ngIf="direccion"> <b>Dirección:</b> {{direccion}} </span>
+  <span *ngIf="telefono"> <b>Fono:</b> {{telefono}} </span>
+  <span *ngIf="horario"> <b>Horario:</b> {{horario}} </span>
+</div>
