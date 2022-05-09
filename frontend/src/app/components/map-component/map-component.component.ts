@@ -69,12 +69,12 @@ export class MapComponentComponent implements AfterViewInit  {
 
       this.map.addLayer(vectorLayer)
 
-      this.showDatatEvent()
+      this.mostrarDatosDelMarcador()
 
     })
   }
 
-  private showDatatEvent(){
+  private mostrarDatosDelMarcador(){
     this.map.on('pointermove', (e: any) => {
 
       this.nombre = ''; this.tipo = ''
